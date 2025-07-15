@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
         try {
-        const response = await fetch('http://localhost:8080/departamento', {
+        const response = await fetch(`${BACKEND_BASE_URL}/departamento`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

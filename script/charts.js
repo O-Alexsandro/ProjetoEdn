@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 async function loadTotalItens() {
     try {
-        const response = await fetch('http://localhost:8080/relacionamento/itens');
+        const response = await fetch(`${BACKEND_BASE_URL}/relacionamento/itens`);
         if (response.ok) {
             const totalItens = await response.json();
             console.log('API Response:', totalItens);
@@ -37,7 +37,7 @@ async function loadTotalItens() {
 
 async function loadTotalMaquinas() {
     try {
-        const response = await fetch('http://localhost:8080/maquina/itens');
+        const response = await fetch(`${BACKEND_BASE_URL}/maquina/itens`);
         if (response.ok) {
             const totalMaquinas = await response.json();
             console.log('API Response:', totalMaquinas);
@@ -65,7 +65,7 @@ async function loadTotalMaquinas() {
 
 async function loadUltimoCadastro() {
     try {
-        const response = await fetch('http://localhost:8080/relacionamento/cadastro');
+        const response = await fetch(`${BACKEND_BASE_URL}/relacionamento/cadastro`);
         if (response.ok) {
             const ultimoCadastro = await response.json();
             console.log('API Response:', ultimoCadastro);
@@ -106,7 +106,7 @@ async function initCharts() {
   if (!hardwareCanvas || !sectorCanvas || !document.getElementById('home-page').classList.contains('active')) return;
 
   try {
-    const response = await fetch('http://localhost:8080/relacionamento');
+    const response = await fetch(`${BACKEND_BASE_URL}/relacionamento`);
     const inventories = await response.json();
 
     const hardwareCounts = {};

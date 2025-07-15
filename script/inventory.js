@@ -1,6 +1,6 @@
 async function fetchData() {
     try {
-        const response = await fetch('http://localhost:8080/relacionamento');
+        const response = await fetch(`${BACKEND_BASE_URL}/relacionamento`);
         const data = await response.json();
         populateTable(data);
     } catch (error) {
@@ -70,7 +70,7 @@ async function deleteItem(id) {
     if (!confirmacao) return;
 
     try {
-        const response = await fetch(`http://localhost:8080/relacionamento/${id}`, {
+        const response = await fetch(`${BACKEND_BASE_URL}/relacionamento/${id}`, {
             method: 'DELETE'
         });
 
@@ -122,7 +122,7 @@ function fecharDetalhes() {
 
 async function exportToCSV() {
     try {
-        const response = await fetch('http://localhost:8080/exportar', {
+        const response = await fetch(`${BACKEND_BASE_URL}/exportar`, {
         method: 'GET',
         });
 

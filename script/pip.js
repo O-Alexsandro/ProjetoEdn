@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return;
 }
         try {
-        const response = await fetch('http://localhost:8080/pip', {
+        const response = await fetch(`${BACKEND_BASE_URL}/pip`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

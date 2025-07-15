@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(novaSenha);
 
         try {
-        const response = await fetch('http://localhost:8080/login/redefinir-senha', {
+        const response = await fetch(`${BACKEND_BASE_URL}/login/redefinir-senha`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

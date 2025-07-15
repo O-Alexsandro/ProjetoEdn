@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         try {
-            const response = await fetch('http://localhost:8080/usuario', {
+            const response = await fetch(`${BACKEND_BASE_URL}/usuario`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 async function loadDepartamentos() {
     try {
-        const response = await fetch('http://localhost:8080/departamento');
+        const response = await fetch(`${BACKEND_BASE_URL}/departamento`);
         if (response.ok) {
             const departamentos = await response.json();
             console.log('API Response:', departamentos); // Debug API response
