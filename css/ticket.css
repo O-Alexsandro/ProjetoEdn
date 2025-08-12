@@ -1,0 +1,151 @@
+.ticket-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.ticket-title {
+    font-size: 24px;
+    margin: 0;
+    color: var(--dark-color);
+}
+
+.ticket-status {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.status-open {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.ticket-details {
+    margin-bottom: 30px;
+}
+
+.detail-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.detail-label {
+    font-weight: 600;
+    width: 120px;
+    color: var(--gray-color);
+}
+
+.detail-value {
+    flex: 1;
+}
+
+.priority-medium {
+    color: #d97706;
+    font-weight: 600;
+}
+
+.ticket-description {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+}
+
+.ticket-attachment {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+}
+
+.attachment-preview {
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    padding: 10px;
+    background: white;
+    display: inline-block;
+}
+
+.attachment-image {
+    max-width: 300px;
+    max-height: 300px;
+    display: block;
+    border-radius: 4px;
+}
+
+.attachment-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.attachment-link:hover {
+    text-decoration: underline;
+}
+
+.ticket-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-secondary {
+    background: #f1f5f9;
+    color: var(--dark-color);
+}
+
+.btn-secondary:hover {
+    background: #e2e8f0;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--secondary-color);
+}
+
+.btn-warning {
+    background: #f8961e;
+    color: white;
+}
+
+.btn-warning:hover {
+    background: #e07f0e;
+}

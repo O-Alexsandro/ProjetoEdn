@@ -251,64 +251,63 @@ card.addEventListener('click', () => {
 
 function renderTicketDetails(container, ticket) {
   container.innerHTML = `
-    <div class="ticket-details-container">
-      <h2>Detalhes do Chamado #${ticket.idChamado}</h2>
+    <div class="ticket-container">
       
+      <div class="ticket-header">
+        <h1 class="ticket-title">Detalhes do Chamado #${ticket.idChamado}</h1>
+        <span class="ticket-status status-${(ticket.status?.valorStatus || 'desconhecido').toLowerCase().replace(/\s+/g, '-')}">
+          ${ticket.status?.valorStatus || 'Desconhecido'}
+        </span>
+      </div>
+
       <div class="ticket-details">
         <div class="detail-row">
           <span class="detail-label">Título:</span>
           <span class="detail-value">${ticket.tituloChamado}</span>
         </div>
-        
-        <div class="detail-row">
-          <span class="detail-label">Status:</span>
-          <span class="detail-value status-${(ticket.status?.valorStatus || 'desconhecido').toLowerCase().replace(' ', '-')}">
-            ${ticket.status?.valorStatus || 'Desconhecido'}
-          </span>
-        </div>
-        
+
         <div class="detail-row">
           <span class="detail-label">Setor:</span>
           <span class="detail-value">${ticket.departamento?.nomeDepartamento || 'Não informado'}</span>
         </div>
-        
+
         <div class="detail-row">
           <span class="detail-label">Prioridade:</span>
           <span class="detail-value priority-${(ticket.prioridade?.nivelPrioridade || 'sem-prioridade').toLowerCase()}">
             ${ticket.prioridade?.nivelPrioridade || 'Sem prioridade'}
           </span>
         </div>
-        
+
         <div class="detail-row">
           <span class="detail-label">Criado em:</span>
           <span class="detail-value">${formatarData(ticket.dataCadastro)}</span>
         </div>
-        
+
         <div class="detail-row">
           <span class="detail-label">Criado por:</span>
           <span class="detail-value">${ticket.usuarioSistema?.username || 'Desconhecido'}</span>
         </div>
-        
-        <div class="detail-row full-width">
-          <span class="detail-label">Descrição:</span>
-          <p class="detail-value">${ticket.descricao}</p>
-        </div>
-        
-        ${ticket.anexo ? `
-        <div class="detail-row full-width">
-          <span class="detail-label">Anexo:</span>
-          <div class="detail-value">
-            <img 
-              src="data:image/png;base64,${ticket.anexo}" 
-              alt="Anexo do Chamado"
-              style="max-width: 300px; border-radius: 5px; border: 1px solid #ccc;" 
-            />
-          </div>
-        </div>` : ''}
       </div>
-      
-      <div class="comment-box">
-        
+
+      <div class="ticket-description">
+        <strong>Descrição:</strong><br>
+        ${ticket.descricao || 'Sem descrição'}
+      </div>
+
+      ${ticket.anexo ? `
+      <div class="ticket-attachment">
+        <strong>Anexo:</strong><br>
+        <div class="attachment-preview">
+          <img 
+            src="data:image/png;base64,${ticket.anexo}" 
+            alt="Anexo do Chamado" 
+            class="attachment-image"
+          />
+        </div>
+      </div>` : ''}
+
+      <div class="ticket-comments">
+        <strong>Comentários:</strong>
         <div id="comentarios">
           ${(ticket.comentarios || []).map(c => `
             <div class="comment">
@@ -319,11 +318,22 @@ function renderTicketDetails(container, ticket) {
               <p class="comment-text">${c.texto}</p>
             </div>
           `).join('')}
-            
-            <textarea id="comentarioNovo" placeholder="Escreva um comentário..."></textarea><br>
-            <button id="btnVoltar" class="secondary"> Voltar para a lista</button><br><br>
-            <button id="btnMarcarEmAndamento">Marcar como em andamento</button>
-            <button id="btnMarcarResolvido">Marcar como Resolvido</button>
+        </div>
+        <textarea id="comentarioNovo" placeholder="Escreva um comentário..."></textarea>
+      </div>
+
+      <div class="ticket-actions">
+        <button id="btnVoltar" class="btn btn-secondary">
+          <i class="fas fa-arrow-left"></i> Voltar para a lista
+        </button>
+        <button id="btnMarcarEmAndamento" class="btn btn-warning">
+          <i class="fas fa-play-circle"></i> Marcar como em andamento
+        </button>
+        <button id="btnMarcarResolvido" class="btn btn-primary">
+          <i class="fas fa-check-circle"></i> Marcar como Resolvido
+        </button>
+      </div>
+
     </div>
   `;
 
