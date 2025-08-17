@@ -45,7 +45,8 @@ document.getElementById('form-login').addEventListener('submit', async (event) =
     const senha = document.getElementById('senha').value;
 
     try {
-      const response = await fetch('http://localhost:8080/login', {
+      const response = await fetch(`${BACKEND_BASE_URL}/login`
+, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, senha })

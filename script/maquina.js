@@ -54,7 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
         showMessage('Por favor, digite a quantidade de armazenamento', 'error');
 }
         try {
-            const response = await fetch('http://localhost:8080/maquina', {
+            const response = await fetch(`${BACKEND_BASE_URL}/maquina`
+, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

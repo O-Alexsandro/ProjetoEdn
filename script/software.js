@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
     return;
 }
         try {
-        const response = await fetch('http://localhost:8080/software', {
+        const response = await fetch(`${BACKEND_BASE_URL}/software`
+, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

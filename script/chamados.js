@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 async function getChamados() {
   const token = localStorage.getItem('token'); // ou onde você armazenou o token
   try {
-    const response = await fetch('http://localhost:8080/chamados/admin', {
+    const response = await fetch(`${BACKEND_BASE_URL}/chamados/admin`
+, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`
@@ -100,7 +101,8 @@ function renderDashboard(container) {
 async function pegarQtdChamadosEmAbertosAdmin() {
   const token = localStorage.getItem('token');
   try {
-    const response = await fetch('http://localhost:8080/chamados/admin/emAberto', {
+    const response = await fetch(`${BACKEND_BASE_URL}/chamados/admin/emAberto`
+, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`
@@ -125,7 +127,8 @@ async function pegarQtdChamadosEmAbertosAdmin() {
 async function pegarQtdChamadosEmTratativaAdmin() {
   const token = localStorage.getItem('token');
   try {
-    const response = await fetch('http://localhost:8080/chamados/admin/emTratativa', {
+    const response = await fetch(`${BACKEND_BASE_URL}/chamados/admin/emTratativa`
+, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`
@@ -150,7 +153,8 @@ async function pegarQtdChamadosEmTratativaAdmin() {
 async function pegarQtdChamadosResolvidosAdmin() {
   const token = localStorage.getItem('token');
   try {
-    const response = await fetch('http://localhost:8080/chamados/admin/resolvidos', {
+    const response = await fetch(`${BACKEND_BASE_URL}/chamados/admin/resolvidos`
+, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`
@@ -182,7 +186,8 @@ async function updateTicketsList() {
   let filtrados = [];
 
   try {
-    const response = await fetch('http://localhost:8080/chamados/admin', {
+    const response = await fetch(`${BACKEND_BASE_URL}/chamados/admin`
+, {
       headers: {
         'Authorization': `Bearer ${token}`
       }

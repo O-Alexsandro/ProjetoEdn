@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 
         try {
-        const response = await fetch('http://localhost:8080/relacionamento', {
+        const response = await fetch(`${BACKEND_BASE_URL}/relacionamento`
+, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -66,7 +67,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 async function loadUsuarios() {
     try {
-        const response = await fetch('http://localhost:8080/usuarioSistema');
+        const response = await fetch(`${BACKEND_BASE_URL}/usuarioSistema`
+);
         if (response.ok) {
             const usuarios = await response.json();
             console.log('API Response:', usuarios); // Debug API response
@@ -87,7 +89,8 @@ async function loadUsuarios() {
 
 async function loadDepartamentosRelacionamento() {
     try {
-        const response = await fetch('http://localhost:8080/departamento');
+        const response = await fetch(`${BACKEND_BASE_URL}/departamento`
+);
         if (response.ok) {
             const departamentos = await response.json();
             console.log('API Response:', departamentos); // Debug API response
@@ -109,7 +112,8 @@ async function loadDepartamentosRelacionamento() {
 
 async function loadMaquina() {
     try {
-        const response = await fetch('http://localhost:8080/maquina');
+        const response = await fetch(`${BACKEND_BASE_URL}/maquina`
+);
         if (response.ok) {
             const maquinas = await response.json();
             console.log('API Response:', maquinas); // Debug API response
@@ -130,7 +134,8 @@ async function loadMaquina() {
 
 async function loadPIP() {
     try {
-        const response = await fetch('http://localhost:8080/pip');
+        const response = await fetch(`${BACKEND_BASE_URL}/pip`
+);
         if (response.ok) {
             const pips = await response.json();
             console.log('API Response:', pips); // Debug API response
@@ -151,7 +156,8 @@ async function loadPIP() {
 
 async function loadSoftware() {
     try {
-        const response = await fetch('http://localhost:8080/software');
+        const response = await fetch(`${BACKEND_BASE_URL}/software`
+);
         if (response.ok) {
             const softwares = await response.json();
             console.log('API Response:', softwares); // Debug API response

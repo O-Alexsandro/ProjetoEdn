@@ -12,7 +12,8 @@ function parseJwt(token) {
 
 async function fetchData() {
     try {
-        const response = await fetch('http://localhost:8080/relacionamento');
+        const response = await fetch(`${BACKEND_BASE_URL}/relacionamento`
+);
         const data = await response.json();
         populateTable(data);
     } catch (error) {
@@ -144,7 +145,8 @@ function fecharDetalhes() {
 
 async function exportToCSV() {
     try {
-        const response = await fetch('http://localhost:8080/exportar', {
+        const response = await fetch(`${BACKEND_BASE_URL}/exportar`
+, {
         method: 'GET',
         });
 
