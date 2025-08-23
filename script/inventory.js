@@ -93,7 +93,7 @@ async function deleteItem(id) {
     if (!confirmacao) return;
 
     try {
-        const response = await fetch(`http://localhost:8080/relacionamento/${id}`, {
+        const response = await fetch(`${BACKEND_BASE_URL}/relacionamento/${id}`, {
             method: 'DELETE'
         });
 

@@ -354,7 +354,7 @@ document.getElementById('btnMarcarEmAndamento').addEventListener('click', async 
   const token = localStorage.getItem('token');
 
   try {
-    const response = await fetch(`http://localhost:8080/chamados/admin/tratar`, {
+    const response = await fetch(`${BACKEND_BASE_URL}/chamados/admin/tratar`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -398,7 +398,7 @@ document.getElementById('btnMarcarResolvido').addEventListener('click', async ()
   const token = localStorage.getItem('token');
 
   try {
-    const response = await fetch(`http://localhost:8080/chamados/admin/tratar`, {
+    const response = await fetch(`${BACKEND_BASE_URL}/chamados/admin/tratar`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

@@ -199,7 +199,7 @@ document.getElementById('nomeMaquina').addEventListener('change', async function
 
 async function fetchMaquina(maquinaId) {
     try {
-        const response = await fetch(`http://localhost:8080/maquina/${maquinaId}`);
+        const response = await fetch(`${BACKEND_BASE_URL}/maquina/${maquinaId}`);
         if (response.ok) {
             return await response.json();
         } else {
